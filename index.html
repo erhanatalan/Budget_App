@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,9 +20,98 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
-    
+  </head>
+  <body>
+    <h1 class="text-center p-5 text-info">GELİR GİDER TAKİP UYGULAMASI</h1>
+    <div class="container text-center justify-content-evenly gelir mb-3">
+      <form class="row ">
+        <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
+          <input
+            type="datetime-local"
+            name="dateGelir"
+            id="dateGelir"
+            class="form-control text-opacity-50"
+            required
+          />
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
+          <input
+            type="text"
+            class="form-control text-opacity-50"
+            id="gider"
+            placeholder="Gelir ₺utarı"
+            required
+          />
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
+          <input
+            type="text"
+            class="form-control text-opacity-50"
+            id="gider"
+            placeholder="Gelir ₺ürü"
+            required
+          />
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-1">
+          <button type="submit" class="btn btn-success">Gelir Kaydet</button>
+        </div>
+      </form>
+    </div>
+    <div class="container text-center justify-content-evenly gider">
+      <form class="row ">
+        <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
+          <input
+            type="datetime-local"
+            name="dateGider"
+            id="dateGider"
+            class="form-control text-opacity-50"
+            required
+          />
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
+          <input
+            type="text"
+            class="form-control text-opacity-50"
+            id="gider"
+            placeholder="Gider ₺utarı"
+            required
+          />
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
+          <input
+            type="text"
+            class="form-control text-opacity-50"
+            id="gider"
+            placeholder="Gider ₺ürü"
+            required
+          />
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-1">
+          <button type="submit" class="btn btn-danger">Gider Kaydet</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container-fluid p-5">
+        <table class="table table-bordered text-center">
+            <thead>
+              <tr class="table-warning">
+                <th scope="col">₺arih</th>
+                <th scope="col">₺ür</th>
+                <th scope="col">₺utar</th>
+                <th scope="col">İptal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-success">
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td><i class="fa-solid fa-trash-can"></i></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 
     <script src="./script.js"></script>
 
@@ -31,5 +120,5 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-</body>
+  </body>
 </html>

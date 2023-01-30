@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url(./img/tax.png); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    background-color: #dedbd6;
+    /* background-position-x: center; */
+
+}
+
+
+.gelir{
+    border: 2px solid green;
+    padding: 10px;
+    align-items: center;
+}
+.gider{
+    border: 2px solid red;
+    padding: 10px;
+    align-items: center;
+}
+
+
+
+
