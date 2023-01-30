@@ -30,15 +30,17 @@
             type="datetime-local"
             name="dateGelir"
             id="dateGelir"
+            value=""
             class="form-control text-opacity-50"
             required
           />
         </div>
         <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
           <input
-            type="text"
+            type="number"
             class="form-control text-opacity-50"
-            id="gider"
+            id="gelirTutar"
+            value=""
             placeholder="Gelir ₺utarı"
             required
           />
@@ -47,13 +49,14 @@
           <input
             type="text"
             class="form-control text-opacity-50"
-            id="gider"
+            id="gelirTuru"
+            value=""
             placeholder="Gelir ₺ürü"
             required
           />
         </div>
         <div class="col-12 col-sm-6 col-md-3 p-1">
-          <button type="submit" class="btn btn-success">Gelir Kaydet</button>
+          <button type="submit" id="gelirBtn" class="btn btn-success">Gelir Kaydet</button>
         </div>
       </form>
     </div>
@@ -64,15 +67,17 @@
             type="datetime-local"
             name="dateGider"
             id="dateGider"
+            value=""
             class="form-control text-opacity-50"
             required
           />
         </div>
         <div class="col-12 col-sm-6 col-md-3 border-3 p-1">
           <input
-            type="text"
+            type="number"
             class="form-control text-opacity-50"
-            id="gider"
+            id="giderTutar"
+            value=""
             placeholder="Gider ₺utarı"
             required
           />
@@ -81,13 +86,14 @@
           <input
             type="text"
             class="form-control text-opacity-50"
-            id="gider"
+            id="giderTuru"
+            value=""
             placeholder="Gider ₺ürü"
             required
           />
         </div>
         <div class="col-12 col-sm-6 col-md-3 p-1">
-          <button type="submit" class="btn btn-danger">Gider Kaydet</button>
+          <button type="submit" id="giderBtn" class="btn btn-danger">Gider Kaydet</button>
         </div>
       </form>
     </div>
@@ -96,16 +102,16 @@
         <table class="table table-bordered text-center table-info">
             <thead>
                 <tr class="">
-                  <th scope="col">₺oplam Gelir</th>
-                  <th scope="col">₺oplam Gider</th>
+                  <th scope="col"><span>₺</span>oplam Gelir</th>
+                  <th scope="col"><span>₺</span>oplam Gider</th>
                   <th scope="col">Kasa</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="">
-                  <td class="table-success"></td>
-                  <td class="table-danger"></td>
-                  <td class="table-primary"></td>
+                  <td class="table-success"><span id="toplamGelir">0</span> ₺</td>
+                  <td class="table-danger"><span id="toplamGider">0</span> ₺</td>
+                  <td class="table-primary"><span id="kasa">0</span> ₺</td>
                 </tr>
               </tbody>
         </table>
@@ -115,19 +121,19 @@
         <table class="table table-bordered text-center">
             <thead>
               <tr class="table-warning">
-                <th scope="col">₺arih</th>
-                <th scope="col">₺ür</th>
-                <th scope="col">₺utar</th>
-                <th scope="col">İptal</th>
+                <th scope="col"><span>₺</span>arih</th>
+                <th scope="col"><span>₺</span>ür</th>
+                <th scope="col"><span>₺</span>utar</th>
+                <th scope="col">İp<span>₺</span>al</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="table-success">
+            <tbody class="tableBody">
+              <!-- <tr class="table-success">
                 <td></td>
                 <td></td>
                 <td></td>
                 <td><i class="fa-solid fa-trash-can"></i></td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
     </div>

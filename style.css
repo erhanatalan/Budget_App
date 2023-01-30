@@ -18,13 +18,17 @@ body{
     border: 2px solid green;
     padding: 10px;
     align-items: center;
+    border-radius: 8px;
 }
 .gider{
     border: 2px solid red;
     padding: 10px;
     align-items: center;
+    border-radius: 8px;
 }
-
+th span{
+    font-size: 1.3rem;
+}
 
 
 
