@@ -27,7 +27,7 @@ const getAlfromLocale = ()=>{
     gelirGider.map((el) => {
         if(el.gg=='gelirT'){
             ekle.innerHTML += `
-            <tr class="table-success" id=${el.id}>
+            <tr class="table-success border-dark" id=${el.id}>
                 <td>${el.tarih}</td>
                 <td>${el.tur}</td>
                 <td class="gelirT">${el.tutar}</td>
@@ -36,7 +36,7 @@ const getAlfromLocale = ()=>{
         `
         }else if(el.gg=='giderT'){
             ekle.innerHTML += `
-            <tr class="table-danger" id=${el.id}>
+            <tr class="table-danger border-dark" id=${el.id}>
                 <td>${el.tarih}</td>
                 <td>${el.tur}</td>
                 <td class="gelirT">${el.tutar}</td>
@@ -71,7 +71,7 @@ const gelirEkle = () =>{
     gelirGider.push(newGelir)
     localStorage.setItem("gelirGider",JSON.stringify(gelirGider));
     ekle.innerHTML += `
-        <tr class="table-success" id=${newGelir.id}>
+        <tr class="table-success border-dark" id=${newGelir.id}>
             <td>${gelirDate.value.split("T").join(" ")}</td>
             <td>${gelirTuru.value}</td>
             <td class="${newGelir.gg}">${gelirTutar.value}</td>
@@ -92,7 +92,7 @@ const giderEkle = () =>{
     localStorage.setItem("gelirGider", JSON.stringify(gelirGider));
 
     ekle.innerHTML += `
-    <tr class="table-danger" id=${newGider.id}>
+    <tr class="table-danger border-dark" id=${newGider.id}>
         <td>${giderDate.value.split("T").join(" ")}</td>
         <td>${giderTuru.value}</td>
         <td class="${newGider.gg}">${giderTutar.value}</td>
