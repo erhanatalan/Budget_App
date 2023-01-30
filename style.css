@@ -5,15 +5,13 @@
 }
 
 body{
-    /* background-image: url(./img/tax.png); */
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
+    /* background-image: url(./img/budget.jpg); */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
     background-color: #dedbd6;
     /* background-position-x: center; */
 
 }
-
-
 .gelir{
     border: 2px solid green;
     padding: 10px;
