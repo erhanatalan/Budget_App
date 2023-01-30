@@ -23,7 +23,8 @@ window.addEventListener("load", ()=>{
 })
 
 const getAlfromLocale = ()=>{
-    gelirGider.forEach((el) => {
+    gelirGider.sort((a, b) => b.id-a.id);
+    gelirGider.map((el) => {
         if(el.gg=='gelirT'){
             ekle.innerHTML += `
             <tr class="table-success" id=${el.id}>
@@ -63,7 +64,6 @@ const gelirEkle = () =>{
     const newGelir = {
         id: new Date().getTime(),
         gg : `gelirT`,
-        deleted : false,
         tarih: `${gelirDate.value.split("T").join(" ")}`,
         tur: `${gelirTuru.value}`,
         tutar: `${gelirTutar.value}`
@@ -78,12 +78,12 @@ const gelirEkle = () =>{
             <td><i class="fa-solid fa-trash-can"></i></td>
         </tr>
     `
+    window.location.reload()
 }
 const giderEkle = () =>{
     const newGider = {
         id: new Date().getTime(),
         gg : `giderT`,
-        deleted : false,
         tarih: `${giderDate.value.split("T").join(" ")}`,
         tur: `${giderTuru.value}`,
         tutar: `${giderTutar.value}`
@@ -99,6 +99,7 @@ const giderEkle = () =>{
         <td><i class="fa-solid fa-trash-can"></i></td>
     </tr>
     `
+    window.location.reload()
 }
 
 const toplam = () =>{
@@ -121,7 +122,6 @@ const toplam = () =>{
     let kasat = gelirToplam - giderToplam
     kasa.innerText = kasat
 }
-
 
 ekle.addEventListener("click", (e)=>{
     const idAttr = e.target.closest("tr").getAttribute('id');
