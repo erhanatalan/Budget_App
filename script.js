@@ -47,6 +47,25 @@ const getAlfromLocale = ()=>{
     });
 }
 
+function AddObje(id, gg, tarih, tur, tutar, acik) {
+    this.id = id;
+    this.gg = gg;
+    this.tarih = tarih;
+    this.tur = tur;
+    this.tutar = tutar;
+    this.acik = acik;
+    this.html = function(){
+        return `
+        <tr class="${this.acik} border-dark" id=${this.id}>g
+            <td>${this.tarih.split("T").join(" ")}</td>
+            <td>${this.tur}</td>
+            <td class="${this.gg}">${this.tutar}</td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+    `}
+}
+
+
 gelirBtn.addEventListener("click", (e)=>{
     e.preventDefault()
     gelirEkle()
@@ -61,44 +80,19 @@ giderBtn.addEventListener("click", (e)=>{
 })
 
 const gelirEkle = () =>{
-    const newGelir = {
-        id: new Date().getTime(),
-        gg : `gelirT`,
-        tarih: `${gelirDate.value.split("T").join(" ")}`,
-        tur: `${gelirTuru.value}`,
-        tutar: `${gelirTutar.value}`
-    }
+    const newGelir = new AddObje( `${new Date().getTime()}`, 'gelirT' ,`${gelirDate.value.split("T").join(" ")}`,`${gelirTuru.value}`,`${gelirTutar.value}`,'table-success')
+        
     gelirGider.push(newGelir)
     localStorage.setItem("gelirGider",JSON.stringify(gelirGider));
-    ekle.innerHTML += `
-        <tr class="table-success border-dark" id=${newGelir.id}>
-            <td>${gelirDate.value.split("T").join(" ")}</td>
-            <td>${gelirTuru.value}</td>
-            <td class="${newGelir.gg}">${gelirTutar.value}</td>
-            <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-    `
+    ekle.innerHTML += newGelir.html()
     window.location.reload()
 }
 const giderEkle = () =>{
-    const newGider = {
-        id: new Date().getTime(),
-        gg : `giderT`,
-        tarih: `${giderDate.value.split("T").join(" ")}`,
-        tur: `${giderTuru.value}`,
-        tutar: `${giderTutar.value}`
-    }
+    const newGider = new AddObje( `${new Date().getTime()}`, 'giderT' ,`${giderDate.value.split("T").join(" ")}`,`${giderTuru.value}`,`${giderTutar.value}`,'table-danger')
+        
     gelirGider.push(newGider)
-    localStorage.setItem("gelirGider", JSON.stringify(gelirGider));
-
-    ekle.innerHTML += `
-    <tr class="table-danger border-dark" id=${newGider.id}>
-        <td>${giderDate.value.split("T").join(" ")}</td>
-        <td>${giderTuru.value}</td>
-        <td class="${newGider.gg}">${giderTutar.value}</td>
-        <td><i class="fa-solid fa-trash-can"></i></td>
-    </tr>
-    `
+    localStorage.setItem("gelirGider",JSON.stringify(gelirGider));
+    ekle.innerHTML += newGider.html()
     window.location.reload()
 }
 
