@@ -47,14 +47,16 @@ const getAlfromLocale = ()=>{
     });
 }
 
-function AddObje(id, gg, tarih, tur, tutar, acik) {
-    this.id = id;
-    this.gg = gg;
-    this.tarih = tarih;
-    this.tur = tur;
-    this.tutar = tutar;
-    this.acik = acik;
-    this.html = function(){
+class AddObje {
+    constructor(id, gg, tarih, tur, tutar, acik){
+        this.id = id;
+        this.gg = gg;
+        this.tarih = tarih;
+        this.tur = tur;
+        this.tutar = tutar;
+        this.acik = acik;
+    }
+    html = function(){
         return `
         <tr class="${this.acik} border-dark" id=${this.id}>g
             <td>${this.tarih.split("T").join(" ")}</td>
